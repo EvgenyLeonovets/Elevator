@@ -1,0 +1,340 @@
+﻿@model Lift.Models.StartupConfigurations
+
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="~/css/Body.css" />
+    <link rel="stylesheet" href="~/css/Button.css" />
+    <link rel="stylesheet" href="~/css/Div.css" />
+    <link rel="stylesheet" href="~/css/Classes.css" />
+
+    <style>
+        .status-bar {
+            background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
+            color: black;
+            border-radius: 10px;
+            padding: 2px;
+            text-align: center;
+            margin-left: 5%;
+            width: 150px;
+            height: 140px;
+            margin-left: 1300px;
+            margin-top: -140px;
+        }
+    </style>
+
+    <script>
+        function Create() {
+            alert("Object 'People' was created!");
+        }
+
+        function Start() {
+            alert("Simulation was started!");
+        }
+
+        function Pause() {
+            alert("Simulation was pauseded!")
+        }
+
+        function SpeedUp() {
+            alert("Speed was increased!");
+        }
+
+        function SpeedDown() {
+            alert("Speed was decreased!");
+        }
+
+        function Emergency() {
+            alert("!!!WARNING!!!");
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- background="~/Back.jpg";-->
+    <table style="width: 1200px;">
+        @{ 
+            int Floors = Model.Floors + 1;
+        }
+        @do
+        {
+            Floors--;
+        <tr>
+            <!--First Block-->
+            <!--First Colomn (Create)-->
+            <td style="width: 120px;">
+                <div>
+                    <button onclick="Create()" class="create-button">Create</button>
+                </div>
+            </td>
+
+            <!--Second Colomn (Зеленый кружок)-->
+            <td style="width: 600px;">
+                <div class="people">
+                </div>
+            </td>
+
+            <!--Панелька кнопочек у лифта-->
+            <td style="width: 185px; ">
+                <div style="background:linear-gradient(to top, rgb(79, 240, 30),#a4ff92);
+                    width: 175px; height: 15px; padding: 15px; margin-left: 1%;">
+                    <table>
+                        <tr style="position: relative; left: -8px; top: -14px;">
+                            <!--Кнопочка 1-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>1</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 3-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>3</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 5-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>5</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 7-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>7</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 9-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>9</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 11-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>11</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 13-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>13</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 15-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>15</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 17-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>17</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 19-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>19</text>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr style="position: relative; left: -8px; top: -14px;">
+                            <!--Кнопочка 2-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>2</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 4-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>4</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 6-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>6</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 8-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>8</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 10-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>10</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 12-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>12</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 14-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>14</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 16-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>16</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 18-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>18</text>
+                                </div>
+                            </td>
+
+                            <!--Кнопочка 20-->
+                            <td>
+                                <div class="status-diode">
+                                    <text>20</text>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+
+            <!--Индикатор Этажей-->
+            <td style="width: 20px;">
+                <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
+                    <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
+                </div>
+            </td>
+
+            @{ 
+                int Lifts = 0;
+            }
+            @do
+            {
+                Lifts++;
+
+            <!--Lift-->
+            <td style="width: 55px;">
+                <div class="lift-background">
+                    <img src="~/closedlift.jpg" class="lift">
+                </div>
+            </td>
+            } while (Lifts < Model.Lifts);
+
+            @*<!--Lift Second-->
+        <td style="width: 55px;">
+            <div class="lift-background">
+                <!--<img src="closedlift.jpg" class="lift">-->
+            </div>
+        </td>
+
+        <!--Lift Third-->
+        <td style="width: 55px;">
+            <div style="background: rgb(110, 104, 104);
+            width: 50px; height: 15px; padding: 15px; margin-left: 1%;">
+            </div>
+        </td>*@
+        </tr>
+        } while (Floors > 1);
+    </table>
+
+    <!--START-->
+    <div onclick="Start()" style="display: flex;">
+        <button class="start-pause-stop" style="margin-top: -500px;">
+            <b>START</b>
+        </button>
+    </div>
+
+    <!--PAUSE-->
+    <div onclick="Pause()" style="display: flex;">
+        <button class="start-pause-stop" style="margin-top:-440px;">
+            <b>PAUSE</b>
+        </button>
+    </div>
+
+    <!--STOP-->
+    <form asp-action="ExitInterface">
+        <div style="display: flex;">
+            <button class="start-pause-stop" style="margin-top:-380px;">
+                <b>STOP</b>
+            </button>
+        </div>
+    </form>
+    
+
+    <!--SPEED UP-->
+    <div style="display: flex;">
+        <button onclick="SpeedUp()" class="speed" style="margin-left: 1310px;">
+            <b>SPEED UP</b>
+        </button>
+    </div>
+
+    <!--SPEED DOWN-->
+    <div style="display: flex;">
+        <button onclick="SpeedDown()" class="speed" style="margin-left: 1380px;">
+            <b>SPEED DOWN</b>
+        </button>
+    </div>
+
+    <!--EMERGENCY-->
+    <div style="display: flex;">
+        <button onclick="Emergency()" class="emergency">
+            <b>EMERGENCY</b>
+        </button>
+    </div>
+
+    <!--NOT BUTTON !-->
+    <div style="display: flex;">
+        <button class="indicator" disabled>
+            <b>!</b>
+        </button>
+    </div>
+
+    <!--Status Bar-->
+    <div style="display: flex;">
+        <div class="status-bar">
+            <text style="text-align: center; margin-left: 5%; font-size: 250%;"><b>Status Bar</b></text>
+            <br>
+            <text style="text-align: center; margin-left: 5%;">Time: 1111<br>People: 13</text>
+        </div>
+    </div>
+</body>
+
+</html>

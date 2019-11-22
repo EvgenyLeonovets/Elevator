@@ -1,0 +1,9 @@
+﻿.status-bar {
+    background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 400px;
+    width: 700px;
+    margin-top: 70px;
+}

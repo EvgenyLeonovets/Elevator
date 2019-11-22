@@ -1,0 +1,5 @@
+﻿body {
+    background-size: 100%;
+    background-image: url(~/Back.jpg);
+    user-select: none;
+}
