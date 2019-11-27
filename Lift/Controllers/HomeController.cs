@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Lift.Models;
 using System.Collections.Immutable;
 using System.Linq;
-using Ninject;
 using Microsoft.AspNetCore.Http;
 
 namespace Lift.Controllers

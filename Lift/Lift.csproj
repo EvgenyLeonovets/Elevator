@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MyStaticFiles\**" />
+    <Content Remove="MyStaticFiles\**" />
+    <EmbeddedResource Remove="MyStaticFiles\**" />
+    <None Remove="MyStaticFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Back.jpg" />
   </ItemGroup>
 
@@ -22,13 +29,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
-    <PackageReference Include="Ninject" Version="3.0.1.10" />
-    <PackageReference Include="Ninject.MVC3" Version="3.0.0.6" />
-    <PackageReference Include="Ninject.Web.Common" Version="3.0.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="MyStaticFiles\" />
   </ItemGroup>
 
 </Project>
