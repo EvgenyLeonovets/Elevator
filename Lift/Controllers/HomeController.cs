@@ -16,12 +16,12 @@ namespace Lift.Controllers
         }
 
         [HttpPost]
-        public ViewResult LiftInterface(StartupConfigurations startupConfigurations)
+        public IActionResult LiftInterface(StartupConfigurations startupConfigurations)
         {
             return View("LiftInterface", startupConfigurations);
         }
 
-        public ViewResult ExitInterface()
+        public IActionResult ExitInterface()
         {
             return View();
         }

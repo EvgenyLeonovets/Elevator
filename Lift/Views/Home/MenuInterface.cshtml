@@ -167,24 +167,28 @@
 </head>
 
 <body>
-    <form asp-action="LiftInterface" method="post">
-        <div class="top-buttons" style="display: flex;
-        justify-content: center; align-items: center; margin-top: 50px; margin-left: 65px;">
+    <div class="top-buttons" style="display: flex; justify-content: center; align-items: center; margin-top: 50px; margin-left: 65px;">
+        <form asp-action="ModelFirst" method="post" style="color: white; margin-right: 20%; width: 200px; height: 40px;
+            background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
             <button onclick="@{Model.ModelWorkSystem = false;}" style="color: white; margin-right: 20%; width: 200px; height: 40px;
             background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
                 Минимум времени ожидания
             </button>
+        </form>
+        <form asp-action="ModelSecond" method="post" style="color: white; width: 200px; height: 40px;
+            background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
             <button onclick="@{Model.ModelWorkSystem = true;}" style="color: white; width: 200px; height: 40px;
             background: linear-gradient(to top, rgb(21, 32, 187) , #06c2b2 ); border-radius: 20px;">
                 Минимум холостых ходов
             </button>
-        </div>
+        </form>
+    </div>
+    
+    <br>
 
-        <br>
-
-        <table style="width:100%; margin-top: 50px; ">
-            <tr>
-                <td style="width: 38%;" ; rowspan="2">
+    <table style="width:100%; margin-top: 50px; ">
+        <tr>
+            <td style="width: 38%;" ; rowspan="2">
                 </td>
                 <td style="margin-top: 12%;" ; rowspan="2">
                     <div style="background: linear-gradient(to top, rgb(14, 94, 14) , #72ff30 ); color: white;
@@ -388,14 +392,12 @@
                border-radius: 20px;">
                 <b>UPLOAD</b>
             </button>
-
-            <button type="submit" style="color: white; margin-right: 100px; width: 200px; height: 40px;
+            <form asp-action="LiftInterface" method="post">
+                <button type="submit" style="color: white; margin-right: 100px; width: 200px; height: 40px;
                      background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23  ); border-radius: 20px;">
-                <b>OK</b>
-            </button>
-            <input asp-for="@Model.ModelWorkSystem" type="hidden" name="ModelWorkSystem" value="">
-            <input type="hidden" name="password" value="pupkin">
-        </div>
-    </form>
+                    <b>OK</b>
+                </button>
+            </form>
+        </div>     
 </body>
 </html>
