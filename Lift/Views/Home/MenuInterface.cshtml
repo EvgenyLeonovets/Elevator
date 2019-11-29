@@ -155,6 +155,14 @@
             $('#AccelerationController b').text(x);
             event.preventDefault();
         }
+
+        function Download() {
+            alert("The properties was downloaded");
+        }
+
+        function Upload() {
+            alert("The properties was Uploaded");
+        }
     </script>
 
 </head>
@@ -364,7 +372,7 @@
 
     <div class="bottom-buttons" style="display: flex;
         justify-content: center; align-items: center; margin-top: 150px; margin-left: 150px;">
-        <button style="color: white;
+        <button onclick="Download()" style="color: white;
                margin-right: 150px;
                   width: 200px;
                    height: 40px;
@@ -372,7 +380,7 @@
                     border-radius: 20px;">
             <b>DOWNLOAD</b>
         </button>
-        <button style="color: white;
+        <button onclick="Upload()" style="color: white;
                  width: 200px;
                  margin-right: 150px;
                    height: 40px;
