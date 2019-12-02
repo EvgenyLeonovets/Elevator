@@ -19,12 +19,6 @@
 
     <script>
 
-        var lifts = @Model.Lifts;
-        var floors = @Model.Floors;
-        var people = @Model.PeopleInLifts;
-        var speed = @Model.SpeedOfLifts;
-        var acceleration = @Model.AccelerationOfLifts;
-
         function Download() {
             alert("The properties was downloaded");
         }
@@ -93,7 +87,7 @@
                     </div>
                 </td>
                 <td>
-                    <form asp-action="FloorsUp()" method="post" asp-route-Lifts="@Model.Floors" style="color: white; width: 50px; height: 50px;
+                    <form asp-action="FloorsUp" method="post" asp-route-Lifts="@Model.Floors" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                         <button type="submit" value="@Model.Floors" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
@@ -166,7 +160,7 @@
                     </div>
                 </td>
                 <td>
-                    <form asp-action="SpeedUp()" method="post" asp-route-Lifts="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
+                    <form asp-action="SpeedUp" method="post" asp-route-Lifts="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                         <button type="submit" value="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
@@ -189,7 +183,7 @@
                     </div>
                 </td>
                 <td>
-                    <form asp-action="AccelerationUp()" method="post" asp-route-Lifts="@Model.AccelerationOfLifts" style="color: white; width: 50px; height: 50px;
+                    <form asp-action="AccelerationUp" method="post" asp-route-Lifts="@Model.AccelerationOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                         <button type="submit" value="@Model.AccelerationOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
@@ -208,7 +202,7 @@
             </tr>
             <tr>
                 <td>
-                    <form asp-action="PeopleDown()" method="post" asp-route-Lifts="@Model.PeopleInLifts" style="color: white; width: 50px; height: 50px;
+                    <form asp-action="PeopleDown" method="post" asp-route-Lifts="@Model.PeopleInLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                         <button type="submit" value="@Model.PeopleInLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
@@ -217,7 +211,7 @@
                     </form>
                 </td>
                 <td>
-                    <form asp-action="SpeedDown()" method="post" asp-route-Lifts="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
+                    <form asp-action="SpeedDown" method="post" asp-route-Lifts="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">
                         <button type="submit" value="@Model.SpeedOfLifts" style="color: white; width: 50px; height: 50px;
                         background: linear-gradient(to top, rgb(255, 217, 0) , #bb9a05 ); border-radius: 100%;">

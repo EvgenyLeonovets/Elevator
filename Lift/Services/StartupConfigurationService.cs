@@ -35,7 +35,7 @@ namespace Lift.Services
 
         public void AddFloors()
         {
-            throw new NotImplementedException();
+           _startupRepository.ChangeAmountOfFloorsUp(1);
         }
 
         public void AddLifts()
@@ -45,22 +45,22 @@ namespace Lift.Services
 
         public void AddPeopleInLifts()
         {
-            throw new NotImplementedException();
+            _startupRepository.ChangeAmountOfPeopleInLiftsUp(1);
         }
 
         public void AddSpeedOfLifts()
         {
-            throw new NotImplementedException();
+            _startupRepository.ChangeAmountOfSpeedOfLiftsUp(1);
         }
 
         public void RemoveAccelerationOfLifts()
         {
-            throw new NotImplementedException();
+            _startupRepository.ChangeAmountOfAccelerationOfLiftsDown(1);
         }
 
         public void RemoveFloors()
         {
-            throw new NotImplementedException();
+           _startupRepository.ChangeAmountOfFloorsDowm(1);
         }
 
         public void RemoveLifts()
@@ -70,12 +70,12 @@ namespace Lift.Services
 
         public void RemovePeopleInLifts()
         {
-            throw new NotImplementedException();
+            _startupRepository.ChangeAmountOfPeopleInLiftsDown(1);
         }
 
         public void RemoveSpeedOfLifts()
         {
-            throw new NotImplementedException();
+            _startupRepository.ChangeAmountOfSpeedOfLiftsDown(1);
         }
 
     }
