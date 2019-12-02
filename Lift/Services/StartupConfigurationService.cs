@@ -18,9 +18,14 @@ namespace Lift.Services
             return _startupRepository.GetStartupConfig();
         }
 
-        public void SetModelWorkSystem(bool worked)
+        public void SetModelWorkSystemFirst()
         {
-            throw new NotImplementedException();
+            _startupRepository.SetModelWorkSystemFirst(true);
+        }
+
+        public void SetModelWorkSystemSecond()
+        {
+            _startupRepository.SetModelWorkSystemFirst(false);
         }
 
         public void AddAccelerationOfLifts()

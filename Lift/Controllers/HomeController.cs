@@ -19,6 +19,22 @@ namespace Lift.Controllers
         }
 
         [HttpPost]
+        public IActionResult FirstModel()
+        {
+            _startupConfigurationService.SetModelWorkSystemFirst();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult SecondModel()
+        {
+            _startupConfigurationService.SetModelWorkSystemSecond();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
         public IActionResult LiftUp()
         {
             _startupConfigurationService.AddLifts();

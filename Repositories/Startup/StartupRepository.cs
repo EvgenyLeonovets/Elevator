@@ -13,9 +13,20 @@ namespace Repository
             return startupConfigurations;
         }
 
-        public void SetModelWorkSystem()
+        public void SetModelWorkSystemFirst(bool flag)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.ModelWorkSystem != flag)
+            {
+                startupConfigurations.ModelWorkSystem = flag;
+            }
+        }
+
+        public void SetModelWorkSystemSecond(bool flag)
+        {
+            if (startupConfigurations.ModelWorkSystem != flag)
+            {
+                startupConfigurations.ModelWorkSystem = flag;
+            }
         }
 
         public void ChangeAmountOfAccelerationOfLiftsUp(int amount)

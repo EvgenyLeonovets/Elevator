@@ -7,7 +7,9 @@ namespace Repository.Startup
     {
         StartupConfigurations GetStartupConfig();
 
-        void SetModelWorkSystem();
+        void SetModelWorkSystemFirst(bool flag);
+
+        void SetModelWorkSystemSecond(bool flag);
 
         void ChangeAmountOfLiftsUp(int amount);
 

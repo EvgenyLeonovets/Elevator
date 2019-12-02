@@ -6,7 +6,9 @@ namespace Lift.Services
     {
         StartupConfigurations GetStartupConfigurations();
 
-        void SetModelWorkSystem(bool worked);
+        void SetModelWorkSystemFirst();
+
+        void SetModelWorkSystemSecond();
 
         void AddFloors();
 
