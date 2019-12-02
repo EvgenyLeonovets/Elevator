@@ -41,12 +41,18 @@ namespace Repository
 
         public void ChangeAmountOfFloorsUp(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.Floors + amount <= 20)
+            {
+                startupConfigurations.Floors += amount;
+            }
         }
 
         public void ChangeAmountOfFloorsDowm(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.Floors - amount >= 2)
+            {
+                startupConfigurations.Floors -= amount;
+            }
         }
 
         public void ChangeAmountOfLiftsUp(int amount)
