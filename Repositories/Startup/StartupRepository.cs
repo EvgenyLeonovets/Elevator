@@ -33,7 +33,7 @@ namespace Repository
             throw new NotImplementedException();
         }
 
-        public void ChangeAmountOfFloorsDown(int amount)
+        public void ChangeAmountOfFloorsDowm(int amount)
         {
             throw new NotImplementedException();
         }
@@ -56,27 +56,36 @@ namespace Repository
 
         public void ChangeAmountOfPeopleInLiftsUp(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.PeopleInLifts + amount <= 5)
+            {
+                startupConfigurations.PeopleInLifts += amount;
+            }
         }
 
         public void ChangeAmountOfPeopleInLiftsDown(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.PeopleInLifts - amount >= 3)
+            {
+                startupConfigurations.PeopleInLifts -= amount;
+            }
         }
 
         public void ChangeAmountOfSpeedOfLiftsUp(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.SpeedOfLifts + amount <= 3)
+            {
+                startupConfigurations.SpeedOfLifts += amount;
+            }
         }
 
         public void ChangeAmountOfSpeedOfLiftsDown(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.SpeedOfLifts - amount >= 1)
+            {
+                startupConfigurations.SpeedOfLifts -= amount;
+            }
         }
 
-        public void ChangeAmountOfFloorsDowm(int amount)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
