@@ -31,12 +31,18 @@ namespace Repository
 
         public void ChangeAmountOfAccelerationOfLiftsUp(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.AccelerationOfLifts + amount <= 2)
+            {
+                startupConfigurations.AccelerationOfLifts += amount;
+            }
         }
 
         public void ChangeAmountOfAccelerationOfLiftsDown(int amount)
         {
-            throw new NotImplementedException();
+            if (startupConfigurations.AccelerationOfLifts - amount >= 1)
+            {
+                startupConfigurations.AccelerationOfLifts -= amount;
+            }
         }
 
         public void ChangeAmountOfFloorsUp(int amount)
@@ -102,7 +108,5 @@ namespace Repository
                 startupConfigurations.SpeedOfLifts -= amount;
             }
         }
-
-       
     }
 }
