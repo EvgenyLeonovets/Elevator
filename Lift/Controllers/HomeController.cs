@@ -1,29 +1,51 @@
-﻿using System;
+﻿using Lift.Models;
+using Lift.Services;
 using Microsoft.AspNetCore.Mvc;
-using Lift.Models;
-using System.Collections.Immutable;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
 
 namespace Lift.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult MenuInterface(StartupConfigurations startupConfigurations)
+        private readonly IStartupConfigurationService _startupConfigurationService;
+        
+        public HomeController(IStartupConfigurationService startupConfigurationService)
         {
-            ViewBag.Configuration = startupConfigurations;
-            return View("MenuInterface", startupConfigurations);
+            _startupConfigurationService = startupConfigurationService;
+        }
+
+        public IActionResult MenuInterface()
+        {
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return View("MenuInterface", startupConfig);
         }
 
         [HttpPost]
-        public IActionResult LiftInterface(StartupConfigurations startupConfigurations)
+        public IActionResult LiftUp()
         {
-            return View("LiftInterface", startupConfigurations);
+            _startupConfigurationService.AddLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult LiftDown()
+        {
+            _startupConfigurationService.RemoveLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult LiftInterface()
+        {
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return View("LiftInterface", startupConfig);
         }
 
         public IActionResult ExitInterface()
         {
-            return View();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return View("ExitInterface", startupConfig);
         }
     }
 }

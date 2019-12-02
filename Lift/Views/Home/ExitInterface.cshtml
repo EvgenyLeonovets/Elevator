@@ -1,4 +1,8 @@
-﻿@{
+﻿@model Lift.Models.StartupConfigurations
+
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
     Layout = null;
 }
 
@@ -14,7 +18,7 @@
     <link rel="stylesheet" href="~/css/Div.css" />
     <link rel="stylesheet" href="~/css/Classes.css" />
 
-    <script>        
+    <script>
         function Download() {
             alert("The properties was downloaded");
         }
@@ -29,11 +33,11 @@
             <text style="font-size: 150%;"><b>Входные данные:</b></text><br>
             <div style="text-align: left;">
                 <ul>
-                    <li>Лифты: 3</li>
-                    <li>Этажи: 12</li>
-                    <li>Максимальное кол-во людей в лифте: 3</li>
-                    <li>Максимальная скорость лифтов (эт/с): 1.5</li>
-                    <li>Максимальное ускорение (м/с<sup>2</sup>): 1</li>
+                    <li>Лифты: @Model.Lifts</li>
+                    <li>Этажи: @Model.Floors</li>
+                    <li>Максимальное кол-во людей в лифте: @Model.PeopleInLifts</li>
+                    <li>Максимальная скорость лифтов (эт/с): @Model.SpeedOfLifts</li>
+                    <li>Максимальное ускорение (м/с<sup>2</sup>): @Model.AccelerationOfLifts</li>
                 </ul>
             </div>
             <text style="font-size: 150%;"><b>Выходные данные:</b></text><br><br>
@@ -41,9 +45,12 @@
                 <thead>
                     <tr>
                         <th>Номер лифта</th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
+                        @{ int Lifts = 1; }
+                        @do
+                        {
+                            <th>@Lifts</th>
+                            Lifts++;
+                        } while (Lifts <= Model.Lifts);
                     </tr>
                 </thead>
 
@@ -53,17 +60,14 @@
                             <text>Общее количество поездок</text>
                         </td>
 
-                        <td>
-                            <text>10</text>
-                        </td>
+                        @{ Lifts = 1; }
+                        @do
+                        {
+                            int x = Lifts * 5;
+                            <td>@x</td>
+                            Lifts++;
+                        } while (Lifts <= Model.Lifts);
 
-                        <td>
-                            <text>20</text>
-                        </td>
-
-                        <td>
-                            <text>30</text>
-                        </td>
                     </tr>
 
                     <tr>
@@ -71,17 +75,14 @@
                             <text>Процент “холостых” поездок</text>
                         </td>
 
-                        <td>
-                            <text>10</text>
-                        </td>
+                        @{ Lifts = 1; }
+                        @do
+                        {
+                            int x = Lifts * 2;
+                            <td>@x</td>
+                            Lifts++;
+                        } while (Lifts <= Model.Lifts);
 
-                        <td>
-                            <text>20</text>
-                        </td>
-
-                        <td>
-                            <text>30</text>
-                        </td>
                     </tr>
 
                     <tr>
@@ -89,17 +90,14 @@
                             <text>Количество перевезённых людей</text>
                         </td>
 
-                        <td>
-                            <text>10</text>
-                        </td>
+                        @{ Lifts = 1; }
+                        @do
+                        {
+                            int x = Lifts * 3;
+                            <td>@x</td>
+                            Lifts++;
+                        } while (Lifts <= Model.Lifts);
 
-                        <td>
-                            <text>20</text>
-                        </td>
-
-                        <td>
-                            <text>30</text>
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -118,7 +116,7 @@
     <div style="margin-left: 700px; margin-top: 20px;">
         <button onclick="Download()" style="color: rgb(0, 0, 0); margin-right: 20%; width: 200px;
                 height: 40px; background:rgb(106, 109, 106);
-                border-radius: 20px;">
+                            border-radius: 20px;">
             <b>DOWNLOAD</b>
         </button>
     </div>
