@@ -1,33 +1,32 @@
-﻿using Lift.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Models.Models;
 
 namespace Lift.Services
 {
     public interface IStartupConfigurationService
     {
-        public StartupConfigurations GetStartupConfigurations();
-        public void SetModelWorkSystem(bool worked);
+        StartupConfigurations GetStartupConfigurations();
 
-        public void AddFloors();
+        void SetModelWorkSystem(bool worked);
 
-        public void RemoveFloors();
+        void AddFloors();
 
-        public void AddLifts();
+        void RemoveFloors();
 
-        public void RemoveLifts();
+        void AddLifts();
 
-        public void AddPeopleInLifts();
+        void RemoveLifts();
 
-        public void RemovePeopleInLifts();
-        public void AddSpeedOfLifts();
+        void AddPeopleInLifts();
 
-        public void RemoveSpeedOfLifts();
-        public void AddAccelerationOfLifts();
+        void RemovePeopleInLifts();
+        
+        void AddSpeedOfLifts();
 
-        public void RemoveAccelerationOfLifts();
+        void RemoveSpeedOfLifts();
+
+        void AddAccelerationOfLifts();
+
+        void RemoveAccelerationOfLifts();
 
     }
 }

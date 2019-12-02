@@ -1,19 +1,31 @@
-﻿using Lift.Models;
+﻿using System;
+using Models.Models;
 using Repository.Startup;
-using System;
 
 namespace Lift.Services
 {
     public class StartupConfigurationService : IStartupConfigurationService
     {
         private readonly IStartupRepository _startupRepository;
+
         public StartupConfigurationService(IStartupRepository startupRepository)
         {
             _startupRepository = startupRepository;
         }
-        public void AddAccelerationOfLifts()
+
+        public StartupConfigurations GetStartupConfigurations()
+        {
+            return _startupRepository.GetStartupConfig();
+        }
+
+        public void SetModelWorkSystem(bool worked)
         {
             throw new NotImplementedException();
+        }
+
+        public void AddAccelerationOfLifts()
+        {
+            _startupRepository.ChangeAmountOfAccelerationOfLiftsUp(1);
         }
 
         public void AddFloors()
@@ -34,11 +46,6 @@ namespace Lift.Services
         public void AddSpeedOfLifts()
         {
             throw new NotImplementedException();
-        }
-
-        public StartupConfigurations GetStartupConfigurations()
-        {
-            return _startupRepository.GetStartupConfig();
         }
 
         public void RemoveAccelerationOfLifts()
@@ -66,9 +73,5 @@ namespace Lift.Services
             throw new NotImplementedException();
         }
 
-        public void SetModelWorkSystem(bool worked)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

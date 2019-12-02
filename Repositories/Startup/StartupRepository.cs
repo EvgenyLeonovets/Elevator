@@ -1,4 +1,4 @@
-﻿using Lift.Models;
+﻿using Models.Models;
 using Repository.Startup;
 using System;
 
@@ -8,12 +8,32 @@ namespace Repository
     {
         private static StartupConfigurations startupConfigurations = new StartupConfigurations();
 
-        public void ChangeAmountOfAccelerationOfLifts(int amount)
+        public StartupConfigurations GetStartupConfig()
+        {
+            return startupConfigurations;
+        }
+
+        public void SetModelWorkSystem()
         {
             throw new NotImplementedException();
         }
 
-        public void ChangeAmountOfFloors(int amount)
+        public void ChangeAmountOfAccelerationOfLiftsUp(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeAmountOfAccelerationOfLiftsDown(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeAmountOfFloorsUp(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeAmountOfFloorsDown(int amount)
         {
             throw new NotImplementedException();
         }
@@ -34,22 +54,27 @@ namespace Repository
             }
         }
 
-        public void ChangeAmountOfPeopleInLifts(int amount)
+        public void ChangeAmountOfPeopleInLiftsUp(int amount)
         {
             throw new NotImplementedException();
         }
 
-        public void ChangeAmountOfSpeedOfLifts(int amount)
+        public void ChangeAmountOfPeopleInLiftsDown(int amount)
         {
             throw new NotImplementedException();
         }
 
-        public StartupConfigurations GetStartupConfig()
+        public void ChangeAmountOfSpeedOfLiftsUp(int amount)
         {
-            return startupConfigurations;
+            throw new NotImplementedException();
         }
 
-        public void SetModelWorkSystem()
+        public void ChangeAmountOfSpeedOfLiftsDown(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeAmountOfFloorsDowm(int amount)
         {
             throw new NotImplementedException();
         }

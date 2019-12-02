@@ -1,5 +1,4 @@
-﻿using Lift.Models;
-using Lift.Services;
+﻿using Lift.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lift.Controllers
@@ -31,6 +30,70 @@ namespace Lift.Controllers
         public IActionResult LiftDown()
         {
             _startupConfigurationService.RemoveLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult FloorsUp()
+        {
+            _startupConfigurationService.AddFloors();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult FloorsDown()
+        {
+            _startupConfigurationService.RemoveFloors();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult PeopleUp()
+        {
+            _startupConfigurationService.AddPeopleInLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult PeopleDown()
+        {
+            _startupConfigurationService.RemovePeopleInLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult SpeedUp()
+        {
+            _startupConfigurationService.AddSpeedOfLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult SpeedDown()
+        {
+            _startupConfigurationService.RemoveSpeedOfLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult AccelerationUp()
+        {
+            _startupConfigurationService.AddAccelerationOfLifts();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult AccelerationDown()
+        {
+            _startupConfigurationService.RemoveAccelerationOfLifts();
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
             return RedirectToAction("MenuInterface", startupConfig);
         }

@@ -1,22 +1,32 @@
-﻿using Lift.Models;
+﻿
+using Models.Models;
 
 namespace Repository.Startup
 {
     public interface IStartupRepository
     {
         StartupConfigurations GetStartupConfig();
+
         void SetModelWorkSystem();
 
         void ChangeAmountOfLiftsUp(int amount);
 
         void ChangeAmountOfLiftsDown(int amount);
 
-        void ChangeAmountOfFloors(int amount);
+        void ChangeAmountOfFloorsUp(int amount);
 
-        void ChangeAmountOfPeopleInLifts(int amount);
+        void ChangeAmountOfFloorsDowm(int amount);
 
-        void ChangeAmountOfSpeedOfLifts(int amount);
+        void ChangeAmountOfPeopleInLiftsUp(int amount);
 
-        void ChangeAmountOfAccelerationOfLifts(int amount);
+        void ChangeAmountOfPeopleInLiftsDown(int amount);
+
+        void ChangeAmountOfSpeedOfLiftsUp(int amount);
+
+        void ChangeAmountOfSpeedOfLiftsDown(int amount);
+
+        void ChangeAmountOfAccelerationOfLiftsUp(int amount);
+
+        void ChangeAmountOfAccelerationOfLiftsDown(int amount);
     }
 }

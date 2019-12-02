@@ -1,4 +1,4 @@
-﻿namespace Lift.Models
+﻿namespace Models.Models
 {
     public class StartupConfigurations
     {
