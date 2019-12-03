@@ -26,7 +26,6 @@
 </head>
 
 <body>
-    <!--  background="~/Back.jpg" ;-->
     <div>
         <div class="status-bar" style="text-align: center;">
             <text style="font-size: 250%;"><b>The Simulation Was Closed</b></text><br><br>
@@ -114,11 +113,13 @@
         </div>
     </div>
     <div style="margin-left: 700px; margin-top: 20px;">
-        <button onclick="Download()" style="color: rgb(0, 0, 0); margin-right: 20%; width: 200px;
-                height: 40px; background:rgb(106, 109, 106);
-                            border-radius: 20px;">
-            <b>DOWNLOAD</b>
-        </button>
+        <form asp-action="ResultDownload" method="post" style="color: rgb(0, 0, 0); margin-right: 20%; width: 200px; height: 40px; 
+            background:rgb(106, 109, 106); border-radius: 20px;">
+            <button type="submit" style="color: rgb(0, 0, 0); margin-right: 20%; width: 200px; height: 40px; 
+                background:rgb(106, 109, 106); border-radius: 20px;">
+                <b>DOWNLOAD</b>
+            </button>
+        </form>
     </div>
 </body>
 </html>

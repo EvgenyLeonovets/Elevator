@@ -129,10 +129,19 @@ namespace Lift.Controllers
             return View("LiftInterface", startupConfig);
         }
 
+        [HttpPost]
         public IActionResult ExitInterface()
         {
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
             return View("ExitInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult ResultDownload()
+        {
+            _startupConfigurationService.DownloadResults();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("ExitInterface", startupConfig);
         }
     }
 }

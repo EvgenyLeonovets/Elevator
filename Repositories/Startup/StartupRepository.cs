@@ -109,15 +109,33 @@ namespace Repository
             }
         }
 
-        public void DownloadConfig(int amount)
+        public void DownloadConfig()
         {
-            StreamWriter f = new StreamWriter("test.txt", false);
+            StreamWriter f = new StreamWriter("Config.txt", false);
             f.WriteLine("Mode of work: " + startupConfigurations.ModelWorkSystem);
             f.WriteLine("Number of lifts: " + startupConfigurations.Lifts);
             f.WriteLine("Number of floors: " + startupConfigurations.Floors);
             f.WriteLine("Number of people in lifts: " + startupConfigurations.PeopleInLifts);
             f.WriteLine("Value of speed of lifts: " + startupConfigurations.SpeedOfLifts);
             f.WriteLine("Value of acceleration of lifts: " + startupConfigurations.AccelerationOfLifts);
+            f.Close();
+        }
+
+        public void DownloadRes()
+        {
+            StreamWriter f = new StreamWriter("Result.txt", true);
+            f.WriteLine("INPUT DATA:");
+            f.WriteLine("");
+            f.WriteLine("Number of lifts: " + startupConfigurations.Lifts);
+            f.WriteLine("Number of floors: " + startupConfigurations.Floors);
+            f.WriteLine("Number of people in lifts: " + startupConfigurations.PeopleInLifts);
+            f.WriteLine("Value of speed of lifts: " + startupConfigurations.SpeedOfLifts);
+            f.WriteLine("Value of acceleration of lifts: " + startupConfigurations.AccelerationOfLifts);
+            f.WriteLine("");
+            f.WriteLine("");
+            f.WriteLine("OUTPUT DATA:");
+            f.WriteLine("");
+            f.WriteLine("This Data will write Evgeniy Leonovets");
             f.Close();
         }
     }

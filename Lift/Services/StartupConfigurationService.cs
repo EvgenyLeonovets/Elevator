@@ -80,7 +80,12 @@ namespace Lift.Services
 
         public void DownloadConfigurations()
         {
-            _startupRepository.DownloadConfig(5);
+            _startupRepository.DownloadConfig();
+        }
+
+        public void DownloadResults()
+        {
+            _startupRepository.DownloadRes();
         }
     }
 }

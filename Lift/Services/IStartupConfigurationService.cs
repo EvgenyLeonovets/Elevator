@@ -31,5 +31,7 @@ namespace Lift.Services
         void RemoveAccelerationOfLifts();
 
         void DownloadConfigurations();
+
+        void DownloadResults();
     }
 }

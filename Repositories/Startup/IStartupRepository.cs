@@ -31,6 +31,8 @@ namespace Repository.Startup
 
         void ChangeAmountOfAccelerationOfLiftsDown(int amount);
 
-        void DownloadConfig(int amount);
+        void DownloadConfig();
+
+        void DownloadRes();
     }
 }
