@@ -127,7 +127,7 @@ namespace Lift.Controllers
         {
             _startupConfigurationService.UploadConfigurations();
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return RedirectToAction("LiftInterface", startupConfig);
+            return View("LiftInterface", startupConfig);
         }
 
         [HttpPost]
@@ -142,7 +142,7 @@ namespace Lift.Controllers
         {
             _startupConfigurationService.DownloadResults();
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return RedirectToAction("ExitInterface", startupConfig);
+            return View("ExitInterface", startupConfig);
         }
 
         [HttpPost]
