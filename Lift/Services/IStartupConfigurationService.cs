@@ -32,6 +32,8 @@ namespace Lift.Services
 
         void DownloadConfigurations();
 
+        void UploadConfigurations();
+
         void DownloadResults();
     }
 }
