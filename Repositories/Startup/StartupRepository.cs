@@ -163,6 +163,7 @@ namespace Repository
             f.WriteLine("Total time of waiting: ");
             f.WriteLine("Number of emergencies: ");
             f.WriteLine("Total time of emergencies: ");
+            f.WriteLine("");
             f.Close();
         }
     }
