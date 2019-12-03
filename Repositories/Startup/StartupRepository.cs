@@ -121,9 +121,21 @@ namespace Repository
             f.Close();
         }
 
+        public void UploadConfig()
+        {
+            StreamReader f = new StreamReader("Config.txt");
+            string ModeWork = f.ReadLine();
+            string NumberLifts = f.ReadLine();
+            string NumberFloors = f.ReadLine();
+            string NumberPeople = f.ReadLine();
+            string ValueSpeed = f.ReadLine();
+            string ValueAcceleration = f.ReadLine();
+            f.Close();
+        }
+
         public void DownloadRes()
         {
-            StreamWriter f = new StreamWriter("Result.txt", true);
+            StreamWriter f = new StreamWriter("Result.txt", false);
             f.WriteLine("INPUT DATA:");
             f.WriteLine("");
             f.WriteLine("Number of lifts: " + startupConfigurations.Lifts);

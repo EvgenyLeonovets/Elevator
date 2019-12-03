@@ -123,17 +123,18 @@ namespace Lift.Controllers
         }
 
         [HttpPost]
+        public IActionResult ConfigUpload()
+        {
+            _startupConfigurationService.UploadConfigurations();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("LiftInterface", startupConfig);
+        }
+
+        [HttpPost]
         public IActionResult LiftInterface()
         {
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
             return View("LiftInterface", startupConfig);
-        }
-
-        [HttpPost]
-        public IActionResult ExitInterface()
-        {
-            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return View("ExitInterface", startupConfig);
         }
 
         [HttpPost]
@@ -142,6 +143,13 @@ namespace Lift.Controllers
             _startupConfigurationService.DownloadResults();
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
             return RedirectToAction("ExitInterface", startupConfig);
+        }
+
+        [HttpPost]
+        public IActionResult ExitInterface()
+        {
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return View("ExitInterface", startupConfig);
         }
     }
 }

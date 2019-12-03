@@ -33,6 +33,8 @@ namespace Repository.Startup
 
         void DownloadConfig();
 
+        void UploadConfig();
+
         void DownloadRes();
     }
 }

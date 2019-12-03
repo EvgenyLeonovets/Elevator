@@ -239,10 +239,13 @@
                     <b>DOWNLOAD</b>
                 </button>
             </form>
-            <button onclick="Upload()" style="color: white; width: 200px; margin-right: 150px; height: 40px;
+            <form asp-action="ConfigUpload" method="post" style="color: white; width: 200px; margin-right: 150px; height: 40px;
+                background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23 ); border-radius: 20px;">
+                <button type="submit" style="color: white; width: 200px; margin-right: 150px; height: 40px;
                     background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23 ); border-radius: 20px;">
-                <b>UPLOAD</b>
-            </button>
+                    <b>UPLOAD</b>
+                </button>
+            </form>
             <form asp-action="LiftInterface" method="post">
                 <button type="submit" style="color: white; margin-right: 100px; width: 200px; height: 40px;
                      background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23  ); border-radius: 20px;">

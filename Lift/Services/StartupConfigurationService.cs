@@ -83,6 +83,11 @@ namespace Lift.Services
             _startupRepository.DownloadConfig();
         }
 
+        public void UploadConfigurations()
+        {
+            _startupRepository.UploadConfig();
+        }
+
         public void DownloadResults()
         {
             _startupRepository.DownloadRes();
