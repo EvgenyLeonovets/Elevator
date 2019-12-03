@@ -125,11 +125,17 @@ namespace Repository
         {
             StreamReader f = new StreamReader("Config.txt");
             string ModeWork = f.ReadLine();
+            ModeWork = ModeWork.Substring(14);
             string NumberLifts = f.ReadLine();
+            NumberLifts = NumberLifts.Substring(17);
             string NumberFloors = f.ReadLine();
+            NumberFloors = NumberFloors.Substring(18);
             string NumberPeople = f.ReadLine();
+            NumberPeople = NumberPeople.Substring(27);
             string ValueSpeed = f.ReadLine();
+            ValueSpeed = ValueSpeed.Substring(25);
             string ValueAcceleration = f.ReadLine();
+            ValueAcceleration = ValueAcceleration.Substring(32);
             f.Close();
         }
 
