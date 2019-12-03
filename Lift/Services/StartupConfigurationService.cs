@@ -78,5 +78,9 @@ namespace Lift.Services
             _startupRepository.ChangeAmountOfSpeedOfLiftsDown(1);
         }
 
+        public void DownloadConfigurations()
+        {
+            _startupRepository.DownloadConfig(5);
+        }
     }
 }

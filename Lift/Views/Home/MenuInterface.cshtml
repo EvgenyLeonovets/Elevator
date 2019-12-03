@@ -232,10 +232,13 @@
         </table>
 
         <div class="bottom-buttons" style="display: flex; justify-content: center; align-items: center; margin-top: 150px; margin-left: 150px;">
-            <button onclick="Download()" style="color: white; margin-right: 150px; width: 200px; height: 40px;
+            <form asp-action="ConfigDownload" method="post" style="color: white; margin-right: 150px; width: 200px; height: 40px;
                 background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23  ); border-radius: 20px;">
-                <b>DOWNLOAD</b>
-            </button>
+                <button type="submit" style="color: white; margin-right: 150px; width: 200px; height: 40px;
+                background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23  ); border-radius: 20px;">
+                    <b>DOWNLOAD</b>
+                </button>
+            </form>
             <button onclick="Upload()" style="color: white; width: 200px; margin-right: 150px; height: 40px;
                     background: linear-gradient(to left, rgb(173, 116, 10) , #fbff23 ); border-radius: 20px;">
                 <b>UPLOAD</b>

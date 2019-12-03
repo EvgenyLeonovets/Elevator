@@ -1,6 +1,6 @@
 ﻿using Models.Models;
 using Repository.Startup;
-using System;
+using System.IO;
 
 namespace Repository
 {
@@ -55,7 +55,7 @@ namespace Repository
 
         public void ChangeAmountOfFloorsDowm(int amount)
         {
-            if (startupConfigurations.Floors - amount >= 2)
+            if (startupConfigurations.Floors - amount >= 9)
             {
                 startupConfigurations.Floors -= amount;
             }
@@ -107,6 +107,18 @@ namespace Repository
             {
                 startupConfigurations.SpeedOfLifts -= amount;
             }
+        }
+
+        public void DownloadConfig(int amount)
+        {
+            StreamWriter f = new StreamWriter("test.txt", false);
+            f.WriteLine("Mode of work: " + startupConfigurations.ModelWorkSystem);
+            f.WriteLine("Number of lifts: " + startupConfigurations.Lifts);
+            f.WriteLine("Number of floors: " + startupConfigurations.Floors);
+            f.WriteLine("Number of people in lifts: " + startupConfigurations.PeopleInLifts);
+            f.WriteLine("Value of speed of lifts: " + startupConfigurations.SpeedOfLifts);
+            f.WriteLine("Value of acceleration of lifts: " + startupConfigurations.AccelerationOfLifts);
+            f.Close();
         }
     }
 }

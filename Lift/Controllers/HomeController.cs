@@ -115,6 +115,14 @@ namespace Lift.Controllers
         }
 
         [HttpPost]
+        public IActionResult ConfigDownload()
+        {
+            _startupConfigurationService.DownloadConfigurations();
+            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
+            return RedirectToAction("MenuInterface", startupConfig);
+        }
+
+        [HttpPost]
         public IActionResult LiftInterface()
         {
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
