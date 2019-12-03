@@ -112,12 +112,12 @@ namespace Repository
         public void DownloadConfig()
         {
             StreamWriter f = new StreamWriter("Config.txt", false);
-            f.WriteLine("Mode_of_work: " + startupConfigurations.ModelWorkSystem + ".");
-            f.WriteLine("Number_of_lifts: " + startupConfigurations.Lifts + ".");
-            f.WriteLine("Number_of_floors: " + startupConfigurations.Floors + ".");
-            f.WriteLine("Number_of_people_in_lifts: " + startupConfigurations.PeopleInLifts + ".");
-            f.WriteLine("Value_of_speed_of_lifts: " + startupConfigurations.SpeedOfLifts + ".");
-            f.WriteLine("Value_of_acceleration_of_lifts: " + startupConfigurations.AccelerationOfLifts + ".");
+            f.WriteLine("Mode of work: " + startupConfigurations.ModelWorkSystem);
+            f.WriteLine("Number of lifts: " + startupConfigurations.Lifts);
+            f.WriteLine("Number of floors: " + startupConfigurations.Floors);
+            f.WriteLine("Number of people in lifts: " + startupConfigurations.PeopleInLifts);
+            f.WriteLine("Value of speed of lifts: " + startupConfigurations.SpeedOfLifts);
+            f.WriteLine("Value of acceleration of lifts: " + startupConfigurations.AccelerationOfLifts);
             f.Close();
         }
 
