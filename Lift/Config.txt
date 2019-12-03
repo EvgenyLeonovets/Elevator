@@ -1,6 +1,6 @@
-Mode_of_work: False.
-Number_of_lifts: 5.
-Number_of_floors: 12.
-Number_of_people_in_lifts: 4.
-Value_of_speed_of_lifts: 2.
-Value_of_acceleration_of_lifts: 1.
+Mode of work: True
+Number of lifts: 3
+Number of floors: 12
+Number of people in lifts: 4
+Value of speed of lifts: 2
+Value of acceleration of lifts: 1

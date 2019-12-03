@@ -1,6 +1,7 @@
 ﻿using Models.Models;
 using Repository.Startup;
 using System.IO;
+using System;
 
 namespace Repository
 {
@@ -126,16 +127,23 @@ namespace Repository
             StreamReader f = new StreamReader("Config.txt");
             string ModeWork = f.ReadLine();
             ModeWork = ModeWork.Substring(14);
+            string Compare = "True";
+            startupConfigurations.ModelWorkSystem = ModeWork.Equals(Compare);
             string NumberLifts = f.ReadLine();
             NumberLifts = NumberLifts.Substring(17);
+            startupConfigurations.Lifts = Convert.ToInt32(NumberLifts);
             string NumberFloors = f.ReadLine();
             NumberFloors = NumberFloors.Substring(18);
+            startupConfigurations.Floors = Convert.ToInt32(NumberFloors);
             string NumberPeople = f.ReadLine();
             NumberPeople = NumberPeople.Substring(27);
+            startupConfigurations.PeopleInLifts = Convert.ToInt32(NumberPeople);
             string ValueSpeed = f.ReadLine();
             ValueSpeed = ValueSpeed.Substring(25);
+            startupConfigurations.SpeedOfLifts = Convert.ToInt32(ValueSpeed);
             string ValueAcceleration = f.ReadLine();
             ValueAcceleration = ValueAcceleration.Substring(32);
+            startupConfigurations.AccelerationOfLifts = Convert.ToInt32(ValueAcceleration);
             f.Close();
         }
 
