@@ -1,4 +1,4 @@
-Mode of work: False
+Mode of work: True
 Number of lifts: 3
 Number of floors: 12
 Number of people in lifts: 4

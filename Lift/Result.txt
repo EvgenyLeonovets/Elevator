@@ -10,3 +10,29 @@ Value of acceleration of lifts: 1
 OUTPUT DATA:
 
 This Data will write Evgeniy Leonovets
+INPUT DATA:
+
+Number of lifts: 3
+Number of floors: 12
+Number of people in lifts: 4
+Value of speed of lifts: 2
+Value of acceleration of lifts: 1
+
+
+OUTPUT DATA:
+
+Lift number 1
+Common number of trips: 
+Percent of free trips: 
+Number of tripped people: 
+
+Lift number 2
+Common number of trips: 
+Percent of free trips: 
+Number of tripped people: 
+
+Lift number 3
+Common number of trips: 
+Percent of free trips: 
+Number of tripped people: 
+

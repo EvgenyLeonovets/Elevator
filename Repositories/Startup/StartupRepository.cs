@@ -135,7 +135,22 @@ namespace Repository
             f.WriteLine("");
             f.WriteLine("OUTPUT DATA:");
             f.WriteLine("");
-            f.WriteLine("This Data will write Evgeniy Leonovets");
+            for (int i = 1; i <= startupConfigurations.Lifts; ++i)
+            {
+                f.WriteLine("Lift number " + i);
+                f.WriteLine("Common number of trips: ");
+                f.WriteLine("Percent of free trips: ");
+                f.WriteLine("Number of tripped people: ");
+                f.WriteLine("");
+            }
+            f.WriteLine("");
+            f.WriteLine("");
+            f.WriteLine("Common numbers of trips: ");
+            f.WriteLine("Middle time of waiting: ");
+            f.WriteLine("Max time of waiting: ");
+            f.WriteLine("Total time of waiting: ");
+            f.WriteLine("Number of emergencies: ");
+            f.WriteLine("Total time of emergencies: ");
             f.Close();
         }
     }
