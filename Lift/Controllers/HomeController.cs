@@ -127,7 +127,7 @@ namespace Lift.Controllers
         {
             _startupConfigurationService.UploadConfigurations();
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return View("LiftInterface", startupConfig);
+            return View("MenuInterface", startupConfig);
         }
 
         [HttpPost]

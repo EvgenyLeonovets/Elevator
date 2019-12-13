@@ -25,7 +25,7 @@ namespace Lift.Services
 
         public void SetModelWorkSystemSecond()
         {
-            _startupRepository.SetModelWorkSystemFirst(false);
+            _startupRepository.SetModelWorkSystemSecond(false);
         }
 
         public void AddAccelerationOfLifts()

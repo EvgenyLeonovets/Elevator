@@ -1,6 +1,6 @@
-Mode of work: True
-Number of lifts: 3
-Number of floors: 12
+Mode of work: False
+Number of lifts: 4
+Number of floors: 17
 Number of people in lifts: 4
 Value of speed of lifts: 2
 Value of acceleration of lifts: 1

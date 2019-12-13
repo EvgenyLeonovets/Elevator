@@ -276,10 +276,14 @@
     </table>
 
     <!--START-->
-    <div onclick="Start()" style="display: flex;">
-        <button class="start-pause-stop" style="margin-top: -500px;">
-            <b>START</b>
-        </button>
+    <div style="display: flex;">
+        <form asp-action="Start" style="margin-top: -500px; color: white; width: 150px; height: 50px;
+            background: linear-gradient(to left, rgb(173, 116, 10), #fbff23 ); border-radius: 20px; margin-left: 1300px;">
+            <button type="submit" style="color: white; width: 150px; height: 50px;
+                background: linear-gradient(to left, rgb(173, 116, 10), #fbff23 ); border-radius: 20px;">
+                <b>START</b>
+            </button>
+        </form>
     </div>
 
     <!--PAUSE-->
