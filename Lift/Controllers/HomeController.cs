@@ -1,29 +1,52 @@
 ﻿using Lift.Services;
 using Microsoft.AspNetCore.Mvc;
+using Models.Models;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Lift.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IStartupConfigurationService _startupConfigurationService;
-        
+
+        private readonly StartupConfigurations _startupConfig;
         public HomeController(IStartupConfigurationService startupConfigurationService)
         {
             _startupConfigurationService = startupConfigurationService;
+            _startupConfig = _startupConfigurationService.GetStartupConfigurations();
+
         }
 
         public IActionResult MenuInterface()
         {
-            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return View("MenuInterface", startupConfig);
+            return View("MenuInterface", _startupConfig);
         }
+
+        public IActionResult MenuInterfaceWithHuman(int floorNumber)
+        {
+            //var outer = Task.Factory.StartNew(() =>   
+            //{
+            //    Random random = new Random();
+            //    Thread.Sleep(1000);
+            //    ViewBag.ChoisenFloor = random.Next(1, 21);
+            //    ViewBag.ActiveFloor = floorNumber;
+            //    return View("LiftInterface", _startupConfig);
+            //});
+            Random random = new Random();
+            Thread.Sleep(1000);
+            ViewBag.ChoisenFloor = random.Next(1, 21);
+            ViewBag.ActiveFloor = floorNumber;
+            return View("LiftInterface", _startupConfig);
+        }
+
 
         [HttpPost]
         public IActionResult FirstModel()
         {
             _startupConfigurationService.SetModelWorkSystemFirst();
-            var startupConfig = _startupConfigurationService.GetStartupConfigurations();
-            return RedirectToAction("MenuInterface", startupConfig);
+            return RedirectToAction("MenuInterface", _startupConfig);
         }
 
         [HttpPost]
@@ -130,7 +153,7 @@ namespace Lift.Controllers
             return View("MenuInterface", startupConfig);
         }
 
-        [HttpPost]
+
         public IActionResult LiftInterface()
         {
             var startupConfig = _startupConfigurationService.GetStartupConfigurations();

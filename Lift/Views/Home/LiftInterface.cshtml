@@ -1,6 +1,6 @@
 ﻿@model Models.Models.StartupConfigurations
-
-@{ 
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     Layout = null;
 }
 
@@ -32,10 +32,11 @@
         }
     </style>
 
+    @*function Create() {
+        alert("Object 'People' was created!");
+        }*@
     <script>
-        function Create() {
-            alert("Object 'People' was created!");
-        }
+
 
         function Start() {
             alert("Simulation was started!");
@@ -63,215 +64,122 @@
 <body>
     <!-- background="~/Back.jpg";-->
     <table style="width: 1200px;">
-        @{ 
+        @{
             int Floors = Model.Floors + 1;
         }
         @do
         {
             Floors--;
-        <tr>
-            <!--First Block-->
-            <!--First Colomn (Create)-->
-            <td style="width: 120px;">
-                <div>
-                    <button onclick="Create()" class="create-button">Create</button>
-                </div>
-            </td>
+            <tr>
+                <!--First Block-->
+                <!--First Colomn (Create)-->
+                <td style="width: 120px;">
+                    <div>
+                        <a class="create-button" asp-controller="Human"
+                           asp-action="Create"
+                           asp-route-floorNumber="@Floors">Create</a>
+                    </div>
+                </td>
 
-            <!--Second Colomn (Зеленый кружок)-->
-            <td style="width: 600px;">
-                <div class="people">
-                </div>
-            </td>
+                <!--Second Colomn (Зеленый кружок)-->
+                <td style="width: 600px;">
+                    <div class="people">
+                    </div>
+                </td>
 
-            <!--Панелька кнопочек у лифта-->
-            <td style="width: 185px; ">
-                <div style="background:linear-gradient(to top, rgb(79, 240, 30),#a4ff92);
+                <!--Панелька кнопочек у лифта-->
+                <td style="width: 185px; ">
+                    <div style="background:linear-gradient(to top, rgb(79, 240, 30),#a4ff92);
                     width: 175px; height: 15px; padding: 15px; margin-left: 1%;">
-                    <table>
-                        <tr style="position: relative; left: -8px; top: -14px;">
-                            <!--Кнопочка 1-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>1</text>
-                                </div>
-                            </td>
+                        <table>
 
-                            <!--Кнопочка 3-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>3</text>
-                                </div>
-                            </td>
+                            <tr style="position: relative; left: -8px; top: -14px;">
+                                <!--Кнопочка 1-->
+                                @for (int i = 1; i <= 20; i += 2)
+                                {
+                                    @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
+                                        ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
+                                    {
+                                        <td>
+                                            <div class="status-diode" style="background-color: purple;">
+                                                <text>@i</text>
+                                            </div>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <div class="status-diode">
+                                                <text>@i</text>
+                                            </div>
+                                        </td>
+                                    }
 
-                            <!--Кнопочка 5-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>5</text>
-                                </div>
-                            </td>
+                                }
 
-                            <!--Кнопочка 7-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>7</text>
-                                </div>
-                            </td>
+                            <tr style="position: relative; left: -8px; top: -14px;">
+                                @for (int i = 2; i <= 20; i += 2)
+                                {
+                                    @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
+                                        ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
+                                    {
+                                        <td>
+                                            <div class="status-diode" style="background-color: purple;">
+                                                <text>@i</text>
+                                            </div>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <div class="status-diode">
+                                                <text>@i</text>
+                                            </div>
+                                        </td>
+                                    }
 
-                            <!--Кнопочка 9-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>9</text>
-                                </div>
-                            </td>
+                                }
+                            </tr>
+                        </table>
+                    </div>
+                </td>
 
-                            <!--Кнопочка 11-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>11</text>
-                                </div>
-                            </td>
+                <!--Индикатор Этажей-->
+                <td style="width: 20px;">
+                    <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
+                        <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
+                    </div>
+                </td>
 
-                            <!--Кнопочка 13-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>13</text>
-                                </div>
-                            </td>
+                @{
+                    int Lifts = 0;
+                }
+                @do
+                {
+                    Lifts++;
 
-                            <!--Кнопочка 15-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>15</text>
-                                </div>
-                            </td>
+                    <!--Lift-->
+                    <td style="width: 55px;">
+                        <div class="lift-background">
+                            <img src="~/closedlift.jpg" class="lift">
+                        </div>
+                    </td>
+                } while (Lifts < Model.Lifts);
 
-                            <!--Кнопочка 17-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>17</text>
-                                </div>
-                            </td>
+                @*<!--Lift Second-->
+                    <td style="width: 55px;">
+                        <div class="lift-background">
+                            <!--<img src="closedlift.jpg" class="lift">-->
+                        </div>
+                    </td>
 
-                            <!--Кнопочка 19-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>19</text>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr style="position: relative; left: -8px; top: -14px;">
-                            <!--Кнопочка 2-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>2</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 4-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>4</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 6-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>6</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 8-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>8</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 10-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>10</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 12-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>12</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 14-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>14</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 16-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>16</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 18-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>18</text>
-                                </div>
-                            </td>
-
-                            <!--Кнопочка 20-->
-                            <td>
-                                <div class="status-diode">
-                                    <text>20</text>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-
-            <!--Индикатор Этажей-->
-            <td style="width: 20px;">
-                <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
-                    <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
-                </div>
-            </td>
-
-            @{ 
-                int Lifts = 0;
-            }
-            @do
-            {
-                Lifts++;
-
-            <!--Lift-->
-            <td style="width: 55px;">
-                <div class="lift-background">
-                    <img src="~/closedlift.jpg" class="lift">
-                </div>
-            </td>
-            } while (Lifts < Model.Lifts);
-
-            @*<!--Lift Second-->
-        <td style="width: 55px;">
-            <div class="lift-background">
-                <!--<img src="closedlift.jpg" class="lift">-->
-            </div>
-        </td>
-
-        <!--Lift Third-->
-        <td style="width: 55px;">
-            <div style="background: rgb(110, 104, 104);
-            width: 50px; height: 15px; padding: 15px; margin-left: 1%;">
-            </div>
-        </td>*@
-        </tr>
+                    <!--Lift Third-->
+                    <td style="width: 55px;">
+                        <div style="background: rgb(110, 104, 104);
+                        width: 50px; height: 15px; padding: 15px; margin-left: 1%;">
+                        </div>
+                    </td>*@
+            </tr>
         } while (Floors > 1);
     </table>
 
@@ -301,7 +209,7 @@
             </button>
         </div>
     </form>
-    
+
 
     <!--SPEED UP-->
     <div style="display: flex;">
