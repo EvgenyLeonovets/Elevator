@@ -27,7 +27,7 @@ namespace Lift.Controllers
         public IActionResult MenuInterfaceWithHuman(int floorNumber)
         {
             Random random = new Random();
-            //Thread.Sleep(3000);
+            Thread.Sleep(3000);
             ViewBag.ChoisenFloor = random.Next(1, _startupConfig.Floors+1);
             ViewBag.ActiveFloor = floorNumber;
             return View("LiftInterface", _startupConfig);

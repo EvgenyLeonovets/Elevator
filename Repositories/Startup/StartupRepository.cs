@@ -56,7 +56,7 @@ namespace Repository
 
         public void ChangeAmountOfFloorsDowm(int amount)
         {
-            if (startupConfigurations.Floors - amount >= 9)
+            if (startupConfigurations.Floors - amount >= 11)
             {
                 startupConfigurations.Floors -= amount;
             }

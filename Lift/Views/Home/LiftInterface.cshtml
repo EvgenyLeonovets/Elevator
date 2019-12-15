@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="~/css/Classes.css" />
 
     <style>
+        
+        #person {
+        position: relative;
+        cursor: pointer;
+        }
+  
         .status-bar {
             background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
             color: black;
@@ -32,12 +38,7 @@
         }
     </style>
 
-    @*function Create() {
-        alert("Object 'People' was created!");
-        }*@
     <script>
-
-
         function Start() {
             alert("Simulation was started!");
         }
@@ -57,8 +58,20 @@
         function Emergency() {
             alert("!!!WARNING!!!");
         }
-    </script>
 
+        function Create(Floor) {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
+                let timePassed = Date.now() - start;
+
+                person.style.left = timePassed / 4 + 'px';
+
+                if (timePassed > 3000) clearInterval(timer);
+
+            }, 20);
+        }
+    </script>
 </head>
 
 <body>
@@ -70,115 +83,115 @@
         @do
         {
             Floors--;
-            <tr>
-                <!--First Block-->
-                <!--First Colomn (Create)-->
-                <td style="width: 120px;">
-                    <div>
-                        <a class="create-button" asp-controller="Human"
-                           asp-action="Create"
-                           asp-route-floorNumber="@Floors">Create</a>
-                    </div>
-                </td>
+        <tr>
+            <!--First Block-->
+            <!--First Colomn (Create)-->
+            <td style="width: 120px;">
+                <div>
+                    <a onclick="Create(@Floors)" class="create-button" asp-controller="Human"
+                       asp-action="Create"
+                       asp-route-floorNumber="@Floors">Create</a>
+                </div>
+            </td>
 
-                <!--Second Colomn (Зеленый кружок)-->
-                <td style="width: 600px;">
-                        <img src="~/person.jpg" style="width: 40px; height:45px">
-                </td>
+            <!--Second Colomn (Зеленый кружок)-->
+            <td style="width: 600px;">
+                <img id="@Floors" src="~/person.jpg" style="width: 40px; height:45px">
+            </td>
 
-                <!--Панелька кнопочек у лифта-->
-                <td style="width: 185px; ">
-                    <div style="background:linear-gradient(to top, rgb(79, 240, 30),#a4ff92);
+            <!--Панелька кнопочек у лифта-->
+            <td style="width: 185px; ">
+                <div style="background:linear-gradient(to top, rgb(79, 240, 30),#a4ff92);
                     width: 175px; height: 15px; padding: 15px; margin-left: 1%;">
-                        <table>
+                    <table>
 
-                            <tr style="position: relative; left: -8px; top: -14px;">
-                                <!--Кнопочка 1-->
-                                @for (int i = 1; i <= 20; i += 2)
+                        <tr style="position: relative; left: -8px; top: -14px;">
+                            <!--Кнопочка 1-->
+                            @for (int i = 1; i <= 20; i += 2)
+                            {
+                                @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
+                                  ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
                                 {
-                                    @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
-                                        ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
-                                    {
-                                        <td>
-                                            <div class="status-diode" style="background-color: purple;">
-                                                <text>@i</text>
-                                            </div>
-                                        </td>
-                                    }
-                                    else
-                                    {
-                                        <td>
-                                            <div class="status-diode">
-                                                <text>@i</text>
-                                            </div>
-                                        </td>
-                                    }
-
+                                    <td>
+                                        <div class="status-diode" style="background-color: purple;">
+                                            <text>@i</text>
+                                        </div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <div class="status-diode">
+                                            <text>@i</text>
+                                        </div>
+                                    </td>
                                 }
 
-                            <tr style="position: relative; left: -8px; top: -14px;">
-                                @for (int i = 2; i <= 20; i += 2)
+                            }
+
+                        <tr style="position: relative; left: -8px; top: -14px;">
+                            @for (int i = 2; i <= 20; i += 2)
+                            {
+                                @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
+                                  ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
                                 {
-                                    @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
-                                        ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
-                                    {
-                                        <td>
-                                            <div class="status-diode" style="background-color: purple;">
-                                                <text>@i</text>
-                                            </div>
-                                        </td>
-                                    }
-                                    else
-                                    {
-                                        <td>
-                                            <div class="status-diode">
-                                                <text>@i</text>
-                                            </div>
-                                        </td>
-                                    }
-
+                                    <td>
+                                        <div class="status-diode" style="background-color: purple;">
+                                            <text>@i</text>
+                                        </div>
+                                    </td>
                                 }
-                            </tr>
-                        </table>
+                                else
+                                {
+                                    <td>
+                                        <div class="status-diode">
+                                            <text>@i</text>
+                                        </div>
+                                    </td>
+                                }
+
+                            }
+                        </tr>
+                    </table>
+                </div>
+            </td>
+
+            <!--Индикатор Этажей-->
+            <td style="width: 20px;">
+                <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
+                    <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
+                </div>
+            </td>
+
+            @{
+                int Lifts = 0;
+            }
+            @do
+            {
+                Lifts++;
+
+                <!--Lift-->
+                <td style="width: 55px;">
+                    <div class="lift-background">
+                        <img src="~/closedlift.jpg" class="lift">
                     </div>
                 </td>
+            } while (Lifts < Model.Lifts);
 
-                <!--Индикатор Этажей-->
-                <td style="width: 20px;">
-                    <div class="indicator-flats" style="display:flex; justify-content: center; align-items: center">
-                        <b style="position: relative; color: #C5C5C5; font-size: 2em; left: 0px;">@Floors</b>
-                    </div>
-                </td>
+            @*<!--Lift Second-->
+        <td style="width: 55px;">
+            <div class="lift-background">
+                <!--<img src="closedlift.jpg" class="lift">-->
+            </div>
+        </td>
 
-                @{
-                    int Lifts = 0;
-                }
-                @do
-                {
-                    Lifts++;
-
-                    <!--Lift-->
-                    <td style="width: 55px;">
-                        <div class="lift-background">
-                            <img src="~/closedlift.jpg" class="lift">
-                        </div>
-                    </td>
-                } while (Lifts < Model.Lifts);
-
-                @*<!--Lift Second-->
-                    <td style="width: 55px;">
-                        <div class="lift-background">
-                            <!--<img src="closedlift.jpg" class="lift">-->
-                        </div>
-                    </td>
-
-                    <!--Lift Third-->
-                    <td style="width: 55px;">
-                        <div style="background: rgb(110, 104, 104);
-                        width: 50px; height: 15px; padding: 15px; margin-left: 1%;">
-                        </div>
-                    </td>*@
-            </tr>
+        <!--Lift Third-->
+        <td style="width: 55px;">
+            <div style="background: rgb(110, 104, 104);
+            width: 50px; height: 15px; padding: 15px; margin-left: 1%;">
+            </div>
+        </td>*@
+        </tr>
         } while (Floors > 1);
     </table>
 
