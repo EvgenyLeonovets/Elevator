@@ -9,7 +9,6 @@ namespace Lift.Controllers
 {
     public class HumanController : Controller
     {
-
         public IActionResult Create(int floorNumber)
         {
             return RedirectToAction("MenuInterfaceWithHuman", "Home", new {floorNumber});
