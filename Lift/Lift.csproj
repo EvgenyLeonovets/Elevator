@@ -12,11 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Back.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\Back.jpg" />
+    <None Include="wwwroot\css\~\Back.jpg" />
     <None Include="wwwroot\closedlift.jpg" />
     <None Include="wwwroot\openedlift.jpg" />
   </ItemGroup>

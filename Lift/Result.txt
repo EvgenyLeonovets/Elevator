@@ -1,10 +1,10 @@
 INPUT DATA:
 
-Number of lifts: 5
-Number of floors: 10
-Number of people in lifts: 3
+Number of lifts: 3
+Number of floors: 12
+Number of people in lifts: 4
 Value of speed of lifts: 2
-Value of acceleration of lifts: 2
+Value of acceleration of lifts: 1
 
 
 OUTPUT DATA:
@@ -20,16 +20,6 @@ Percent of free trips:
 Number of tripped people: 
 
 Lift number 3
-Common number of trips: 
-Percent of free trips: 
-Number of tripped people: 
-
-Lift number 4
-Common number of trips: 
-Percent of free trips: 
-Number of tripped people: 
-
-Lift number 5
 Common number of trips: 
 Percent of free trips: 
 Number of tripped people: 

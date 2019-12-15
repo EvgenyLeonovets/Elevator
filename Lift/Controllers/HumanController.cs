@@ -12,8 +12,7 @@ namespace Lift.Controllers
 
         public IActionResult Create(int floorNumber)
         {
-
-            return RedirectToAction("MenuInterfaceWithHuman", "Home", new {floorNumber });
+            return RedirectToAction("MenuInterfaceWithHuman", "Home", new {floorNumber});
         }
 
         
