@@ -169,7 +169,7 @@
             <!--First Colomn (Create)-->
             <td style="width: 120px;">
                 <div>
-                    <a onclick="Create@{@Floors;}()" class="create-button" asp-controller="Human"
+                    <a onclick="document.getElementById('person@{@Floors;}').style.display=''; Create@{@Floors;}()" class="create-button" asp-controller="Human"
                        asp-action="Create"
                        asp-route-floorNumber="@Floors">Create</a>
                 </div>
@@ -177,10 +177,10 @@
 
             <!--Second Colomn (Зеленый кружок)-->
             <td style="width: 600px;">
-                <img id="person@{@Floors;}" src="~/person.jpg" style="width: 40px; height:45px">
+                <img id="person@{@Floors;}" src="~/person.jpg" style="width: 40px; display: none; height: 45px">
                 @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor)
                 {
-                    <img id="" src="~/person.jpg" style="position:relative; left: 455px; width: 40px; height:45px">
+                    <img id="" src="~/person.jpg" style="position:relative; left: 503px; width: 40px; height:45px">
                 }
                 <script>
                 function Create@{@Floors;}() {
