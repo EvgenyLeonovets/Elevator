@@ -178,21 +178,25 @@
             <!--Second Colomn (Зеленый кружок)-->
             <td style="width: 600px;">
                 <img id="person@{@Floors;}" src="~/person.jpg" style="width: 40px; height:45px">
-            </td>
-
-            <script>
+                @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor)
+                {
+                    <img id="" src="~/person.jpg" style="position:relative; left: 455px; width: 40px; height:45px">
+                }
+                <script>
                 function Create@{@Floors;}() {
-            let start = Date.now();
+                    let start = Date.now();
 
-            let timer = setInterval(function () {
-            let timePassed = Date.now() - start;
-            person@{@Floors;}.style.left = timePassed / 6 + 'px';
+                    let timer = setInterval(function () {
+                        let timePassed = Date.now() - start;
+                        person@{@Floors;}.style.left = timePassed / 6 + 'px';
 
-            if (timePassed > 3000) clearInterval(timer);
 
-            }, 20);
-            }
-            </script>
+                        if (timePassed > 3000) clearInterval(timer);
+
+                    }, 20);
+                    }
+                </script>
+            </td>
 
             <!--Панелька кнопочек у лифта-->
             <td style="width: 185px; ">
