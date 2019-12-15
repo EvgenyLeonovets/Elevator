@@ -19,11 +19,105 @@
 
     <style>
         
-        #person {
+        #person1 {
         position: relative;
         cursor: pointer;
         }
-  
+
+        #person2 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person3 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person4 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person5 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person6 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person7 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person8 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person9 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person10 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person11 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person12 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person13 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person14 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person15 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person16 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person17 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person18 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person19 {
+        position: relative;
+        cursor: pointer;
+        }
+
+        #person20 {
+        position: relative;
+        cursor: pointer;
+        }
         .status-bar {
             background: linear-gradient(to top, rgb(106, 109, 106), #fdfdfd );
             color: black;
@@ -58,19 +152,6 @@
         function Emergency() {
             alert("!!!WARNING!!!");
         }
-
-        function Create(Floor) {
-            let start = Date.now();
-
-            let timer = setInterval(function () {
-                let timePassed = Date.now() - start;
-
-                person.style.left = timePassed / 6 + 'px';
-
-                if (timePassed > 3000) clearInterval(timer);
-
-            }, 20);
-        }
     </script>
 </head>
 
@@ -88,7 +169,7 @@
             <!--First Colomn (Create)-->
             <td style="width: 120px;">
                 <div>
-                    <a onclick="Create(@Floors)" class="create-button" asp-controller="Human"
+                    <a onclick="Create@{@Floors;}()" class="create-button" asp-controller="Human"
                        asp-action="Create"
                        asp-route-floorNumber="@Floors">Create</a>
                 </div>
@@ -96,8 +177,22 @@
 
             <!--Second Colomn (Зеленый кружок)-->
             <td style="width: 600px;">
-                <img id="person" src="~/person.jpg" style="width: 40px; height:45px">
+                <img id="person@{@Floors;}" src="~/person.jpg" style="width: 40px; height:45px">
             </td>
+
+            <script>
+                function Create@{@Floors;}() {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
+            let timePassed = Date.now() - start;
+            person@{@Floors;}.style.left = timePassed / 6 + 'px';
+
+            if (timePassed > 3000) clearInterval(timer);
+
+            }, 20);
+            }
+            </script>
 
             <!--Панелька кнопочек у лифта-->
             <td style="width: 185px; ">
@@ -110,7 +205,7 @@
                             @for (int i = 1; i <= 20; i += 2)
                             {
                                 @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
-                                  ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
+                                 ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
                                 {
                                     <td>
                                         <div class="status-diode" style="background-color: purple;">
@@ -133,7 +228,7 @@
                             @for (int i = 2; i <= 20; i += 2)
                             {
                                 @if (ViewBag.ActiveFloor != null && Floors == ViewBag.ActiveFloor &&
-                                  ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
+                                 ViewBag.ChoisenFloor != null && i == ViewBag.ChoisenFloor)
                                 {
                                     <td>
                                         <div class="status-diode" style="background-color: purple;">
